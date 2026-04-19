@@ -1,0 +1,3 @@
+-aissatou d traore_afritalen
+-aissatou dioulde traore SEMI
+-Ce projet, nommé AfriTalent, consiste á concevoir un site vitrine mettant en relation les services d'un développeur aux diffirentes entreprises. Ce qui permet aux entreprises de faire appel á ces derniers pour une relation de travail freelance.
