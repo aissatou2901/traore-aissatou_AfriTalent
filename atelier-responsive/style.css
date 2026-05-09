@@ -57,3 +57,278 @@ transition: color 0.3s; /* Animation douce de la couleur au survol */
 .nav-liens a:hover { 
 color: #e94560;
 }
+
+
+/* --- SECTION HERO --- */
+.hero { 
+display: flex; 
+flex-direction: column; /* Empile les elements verticalement */ 
+align-items: center;    
+/* Centre horizontalement */ 
+justify-content: center; 
+text-align: center; 
+padding: 6rem 2rem; 
+background: linear-gradient(135deg, #1a1a2e, #0f3460); 
+color: white; 
+min-height: 70vh; /* Occupe au moins 70% de la hauteur de la fenetre */ 
+} 
+.hero h1 { 
+font-size: 2.8rem; 
+margin-bottom: 1rem; 
+line-height: 1.2; 
+} 
+.hero p { 
+font-size: 1.1rem; 
+margin-bottom: 2rem; 
+opacity: 0.85; 
+max-width: 600px; 
+} 
+.btn-hero { 
+display: inline-block; 
+background: #e94560; 
+color: white; 
+padding: 0.9rem 2.5rem; 
+border-radius: 4px; 
+text-decoration: none; 
+font-weight: bold; 
+font-size: 1rem; 
+transition: background 0.3s, transform 0.2s; 
+} 
+.btn-hero:hover { 
+background: #c73652; 
+transform: translateY(-2px); /* Leger deplacement vers le haut au survol */ 
+} 
+/* --- SECTION CARTES --- */
+.section-cartes { 
+padding: 4rem 2rem; 
+max-width: 1200px; 
+margin: 0 auto; 
+} 
+.titre-section { 
+font-size: 1.8rem; 
+margin-bottom: 2rem; 
+text-align: center; 
+} 
+/* Conteneur Flex pour aligner les cartes */
+.grille-cartes { 
+display: flex; 
+flex-wrap: wrap;           
+gap: 1.5rem; 
+justify-content: center; 
+}
+
+.carte { 
+background: white; 
+border-radius: 10px; 
+overflow: hidden;         
+/* Cache ce qui depasse des coins arrondis */ 
+box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10); 
+flex: 1 1 280px;          
+max-width: 360px; 
+display: flex; 
+flex-direction: column;   
+/* Empile l'image et le contenu verticalement */ 
+transition: transform 0.3s, box-shadow 0.3s; 
+} 
+.carte:hover { 
+transform: translateY(-4px); 
+box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); 
+} 
+.carte-image { 
+height: 160px; /* Hauteur fixe pour toutes les images */ 
+} 
+.carte-contenu { 
+padding: 1.4rem; 
+display: flex; 
+flex-direction: column; 
+flex: 1; /* Le contenu prend tout l'espace disponible en hauteur */ 
+} 
+.categorie { 
+font-size: 0.75rem; 
+text-transform: uppercase; 
+color: #e94560; 
+font-weight: bold; 
+letter-spacing: 0.05em; 
+margin-bottom: 0.5rem; 
+} 
+.carte h3 { 
+font-size: 1.1rem; 
+margin-bottom: 0.5rem; 
+color: #1a1a2e; 
+} 
+.carte p { 
+font-size: 0.9rem; 
+color: #666; 
+flex: 1;            
+margin-bottom: 1rem; 
+} 
+.lien-carte { 
+color: #e94560; 
+text-decoration: none; 
+font-weight: bold; 
+font-size: 0.9rem; 
+} 
+.lien-carte:hover { 
+text-decoration: underline; 
+}
+
+
+.conteneur { 
+display: grid; 
+/* Definit les colonnes et leurs tailles */ 
+/* 1fr = une fraction de l'espace libre */ 
+grid-template-columns: 1fr 1fr 1fr; /* 3 colonnes de taille egale */ 
+/* Peut aussi s'ecrire avec repeat() */ 
+grid-template-columns: repeat(3, 1fr); 
+/* Espace entre toutes les cellules */ 
+gap: 24px; 
+} 
+
+.grand-element { 
+grid-column: span 2; /* Cet element s'etend sur 2 colonnes */ 
+grid-row: span 2;    
+/* Cet element s'etend sur 2 lignes */ 
+}
+
+/* --- LAYOUT PRINCIPAL AVEC GRID --- */
+.layout-principal { 
+display: grid; 
+/* 
+        Deux colonnes : 
+        - 1fr : colonne principale, prend tout l'espace disponible 
+        - 300px : sidebar de largeur fixe 
+    */ 
+grid-template-columns: 1fr 300px; 
+gap: 2rem; 
+max-width: 1200px; 
+margin: 0 auto; 
+padding: 2rem; 
+} 
+.article-une .article-image { 
+height: 280px; 
+background: linear-gradient(135deg, #0f3460, #533483); 
+border-radius: 10px; 
+margin-bottom: 1.5rem; 
+} 
+.article-une h3 { 
+font-size: 1.5rem; 
+margin-bottom: 0.75rem; 
+color: #1a1a2e; 
+} 
+.article-une p { 
+color: #555; 
+margin-bottom: 1.5rem; 
+line-height: 1.7; 
+} 
+/* --- SIDEBAR --- */
+.sidebar { 
+background: white; 
+padding: 1.5rem; 
+border-radius: 10px; 
+box-shadow: 0 2px 16px rgba(0, 0, 0, 0.10); 
+height: fit-content; /* La sidebar ne s'etire pas sur toute la hauteur de la 
+grille */ 
+position: sticky; 
+top: 80px; /* Reste visible sous la navbar lors du defilement */ 
+} 
+.sidebar h3 { 
+font-size: 1rem; 
+font-weight: bold; 
+color: #1a1a2e; 
+margin-bottom: 0.75rem; 
+margin-top: 1.5rem; 
+text-transform: uppercase; 
+letter-spacing: 0.05em; 
+} 
+.sidebar h3:first-child { 
+margin-top: 0; 
+} 
+.liste-categories { 
+list-style: none; 
+margin-bottom: 0.5rem; 
+} 
+.liste-categories li { 
+padding: 0.5rem 0; 
+border-bottom: 1px solid #f0f0f0; 
+font-size: 0.9rem; 
+color: #555; 
+cursor: pointer; 
+transition: color 0.2s; 
+} 
+.liste-categories li:hover { 
+color: #e94560; 
+} 
+.sidebar-texte { 
+font-size: 0.85rem; 
+color: #777; 
+margin-bottom: 0.75rem; 
+} 
+.input-newsletter { 
+width: 100%; 
+padding: 0.6rem 0.8rem; 
+border: 1px solid #ddd; 
+border-radius: 4px; 
+margin-bottom: 0.5rem; 
+font-size: 0.9rem; 
+box-sizing: border-box; 
+} 
+.btn-newsletter { 
+width: 100%; 
+padding: 0.7rem; 
+background: #e94560; 
+color: white; 
+border: none; 
+border-radius: 4px; 
+cursor: pointer; 
+font-weight: bold; 
+font-size: 0.9rem; 
+transition: background 0.3s;
+} 
+.btn-newsletter:hover { 
+background: #c73652; 
+}
+
+.grille-auto { 
+display: grid; 
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+gap: 1.5rem; 
+}
+
+h1 { 
+font-size: clamp(1.5rem, 4vw, 3rem); 
+} 
+
+
+.section-outils { 
+padding: 4rem 2rem; 
+background: #1a1a2e; 
+color: white; 
+} 
+.section-outils .titre-section { 
+color: white; 
+} 
+/* Grille qui s'adapte seule selon l'espace disponible */
+.grille-outils { 
+display: grid; 
+grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+gap: 1rem; 
+max-width: 900px; 
+margin: 0 auto; 
+} 
+.outil-card { 
+background: rgba(255, 255, 255, 0.08); 
+border: 1px solid rgba(255, 255, 255, 0.15); 
+border-radius: 10px; 
+padding: 2rem 1rem; 
+text-align: center; 
+font-weight: bold; 
+/* clamp() adapte la taille de police a la largeur de l'ecran */ 
+font-size: clamp(0.85rem, 2vw, 1.05rem); 
+transition: background 0.3s, transform 0.2s; 
+cursor: default; 
+}
+
+.outil-card:hover { 
+background: #e94560; 
+transform: translateY(-3px); 
+} 
