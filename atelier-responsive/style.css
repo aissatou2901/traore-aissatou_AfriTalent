@@ -332,3 +332,132 @@ cursor: default;
 background: #e94560; 
 transform: translateY(-3px); 
 } 
+
+/* Styles de base : s'appliquent a TOUS les ecrans (mobile d'abord) */
+.element { 
+font-size: 1rem; 
+} 
+/* Ecrans d'au moins 768px (tablette et plus) */
+@media (min-width: 768px) { 
+.element { 
+font-size: 1.2rem; 
+    } 
+} 
+/* Ecrans d'au moins 1024px (ordinateur et plus) */
+@media (min-width: 1024px) { 
+.element { 
+font-size: 1.4rem; 
+    } 
+} 
+
+/* =========================================================== 
+   MEDIA QUERIES — Adaptations selon la taille de l'ecran 
+   =========================================================== */ 
+/* --- TABLETTE : ecrans de 768px et moins --- */
+@media (max-width: 768px) { 
+/* La navbar passe en colonne */ 
+.nav-principale { 
+flex-direction: column; 
+gap: 1rem; 
+padding: 1rem; 
+text-align: center; 
+    } 
+/* Les liens de navigation se mettent en colonne */ 
+.nav-liens { 
+flex-direction: column; 
+gap: 0.5rem; 
+align-items: center; 
+    } 
+/* Titre du hero plus petit pour ne pas deborder */ 
+.hero h1 { 
+font-size: 1.8rem; 
+    } 
+/* Le layout passe a une seule colonne */ 
+.layout-principal { 
+grid-template-columns: 1fr; 
+padding: 1rem; 
+    } 
+/* La sidebar n'est plus sticky sur mobile */ 
+.sidebar { 
+position: static; 
+    } 
+} 
+/* --- MOBILE STRICT : ecrans de 480px et moins --- */
+@media (max-width: 480px) { 
+.hero { 
+padding: 4rem 1rem; 
+min-height: 50vh; 
+    } 
+.hero h1 { 
+font-size: 1.4rem; 
+    } 
+    .section-cartes { 
+padding: 2rem 1rem; 
+    } 
+.btn-hero { 
+padding: 0.8rem 1.5rem; 
+font-size: 0.9rem; 
+    } 
+} 
+/* --- ORDINATEUR : ecrans de 1024px et plus --- */
+@media (min-width: 1024px) { 
+/* Hero encore plus grand sur grand ecran */ 
+.hero h1 { 
+font-size: 3.2rem; 
+    } 
+/* Les cartes peuvent aller jusqu'a 4 par ligne */ 
+.grille-cartes { 
+justify-content: flex-start; 
+    } 
+} 
+
+/* --- PIED DE PAGE --- */
+.footer { 
+background: #1a1a2e; 
+color: rgba(255, 255, 255, 0.80); 
+padding: 3rem 2rem 1.5rem; 
+margin-top: 4rem; 
+} 
+/* Grille auto-adaptable pour les colonnes du footer */
+.footer-grille { 
+display: grid; 
+grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); 
+gap: 2rem; 
+max-width: 1200px; 
+margin: 0 auto 2rem; 
+} 
+.footer h4 { 
+color: #e94560; 
+margin-bottom: 0.75rem; 
+font-size: 0.95rem; 
+text-transform: uppercase; 
+letter-spacing: 0.05em; 
+} 
+.footer p { 
+    font-size: 0.9rem; 
+line-height: 1.6; 
+color: rgba(255, 255, 255, 0.65); 
+} 
+.footer ul { 
+list-style: none; 
+} 
+.footer ul li { 
+margin-bottom: 0.4rem; 
+} 
+.footer a { 
+color: rgba(255, 255, 255, 0.65); 
+text-decoration: none; 
+font-size: 0.9rem; 
+transition: color 0.2s; 
+} 
+.footer a:hover { 
+color: #e94560; 
+} 
+.footer-copyright { 
+text-align: center; 
+font-size: 0.8rem; 
+color: rgba(255, 255, 255, 0.35); 
+border-top: 1px solid rgba(255, 255, 255, 0.10); 
+padding-top: 1.5rem; 
+margin-top: 0; 
+} 
