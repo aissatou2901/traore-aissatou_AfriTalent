@@ -1,0 +1,59 @@
+.conteneur { 
+display: flex; 
+flex-direction: row; 
+justify-content: space-between; 
+align-items: center; 
+flex-wrap: wrap; 
+gap: 16px; 
+}
+
+
+.enfant { 
+flex: 1 1 280px; 
+}
+
+/* --- RESET MINIMAL --- */ 
+* { 
+margin: 0; 
+padding: 0; 
+box-sizing: border-box; /* Les bordures et paddings sont inclus dans la taille 
+de l'element */ 
+} 
+body { 
+font-family: 'Segoe UI', Arial, sans-serif; 
+color: #1a1a2e; 
+background: #f8f9fa; 
+line-height: 1.6; 
+} 
+/* --- NAVIGATION AVEC FLEXBOX --- */
+.nav-principale { 
+display: flex; 
+justify-content: space-between; /* Logo a gauche, liens a droite */ 
+align-items: center;            
+padding: 1rem 2rem; 
+background: #1a1a2e; 
+position: sticky; /* La barre reste visible au defilement */ 
+top: 0; 
+z-index: 100; 
+} 
+.logo { 
+color: #e94560; 
+font-size: 1.5rem; 
+font-weight: bold; 
+text-decoration: none; 
+} 
+/* La liste de liens est elle-meme un conteneur Flex */
+.nav-liens { 
+display: flex; 
+list-style: none; 
+gap: 2rem; /* Espacement regulier entre les liens */ 
+} 
+.nav-liens a { 
+color: #ffffff; 
+text-decoration: none; 
+font-size: 0.95rem; 
+transition: color 0.3s; /* Animation douce de la couleur au survol */ 
+} 
+.nav-liens a:hover { 
+color: #e94560;
+}
